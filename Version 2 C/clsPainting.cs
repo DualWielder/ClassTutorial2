@@ -16,7 +16,7 @@ namespace Version_2_C
         public override void EditDetails()
         {
             if (_PaintDialog == null)
-                _PaintDialog = new frmPainting();
+                _PaintDialog = frmPainting.Instance;
             _PaintDialog.SetDetails(this);
         }
 

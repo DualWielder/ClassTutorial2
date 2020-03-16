@@ -15,7 +15,7 @@ namespace Version_2_C
         public override void EditDetails()
         {
             if (_PhotoDialog == null)
-                _PhotoDialog = new frmPhotograph();
+                _PhotoDialog = frmPhotograph.Instance;
             _PhotoDialog.SetDetails(this);
         }
 

@@ -1,11 +1,13 @@
 namespace Version_2_C
 {
-    public partial class frmSculpture : frmWork
+    public sealed partial class frmSculpture : frmWork
     {
-        public frmSculpture()
+        private frmSculpture()
         {
             InitializeComponent();
         }
+
+        public static readonly frmSculpture Instance = new frmSculpture();
 
         protected override void updateForm()
         {

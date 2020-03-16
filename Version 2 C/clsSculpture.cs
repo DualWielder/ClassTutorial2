@@ -14,7 +14,7 @@ namespace Version_2_C
         public override void EditDetails()
         {
             if (_SculptureDialog == null)
-                _SculptureDialog = new frmSculpture();
+                _SculptureDialog = frmSculpture.Instance;
             _SculptureDialog.SetDetails(this);
         }
 
