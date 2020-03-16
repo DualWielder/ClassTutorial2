@@ -6,8 +6,8 @@ namespace Version_2_C
     [Serializable()]
     public class clsWorksList : List<clsWork>
     {
-        private static clsNameComparer _NameComparer = new clsNameComparer();
-        private static clsDateComparer _DateComparer = new clsDateComparer();
+        private static clsNameComparer _NameComparer = clsNameComparer.Instance;
+        private static clsDateComparer _DateComparer = clsDateComparer.Instance;
         private byte _SortOrder;
 
         public void AddWork(char prChoice)
