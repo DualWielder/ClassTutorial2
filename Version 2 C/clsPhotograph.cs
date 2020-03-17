@@ -5,18 +5,18 @@ namespace Version_2_C
     [Serializable()]
     public class clsPhotograph : clsWork
     {
+        public delegate void LoadPhotographFormDelegate(clsPhotograph prPhotograph);
+        public static LoadPhotographFormDelegate LoadPhotographForm;
+
         private float _Width;
         private float _Height;
         private string _Type;
 
-        [NonSerialized()]
-        private frmPhotograph _PhotoDialog;
+       
 
         public override void EditDetails()
         {
-            if (_PhotoDialog == null)
-                _PhotoDialog = frmPhotograph.Instance;
-            _PhotoDialog.SetDetails(this);
+            LoadPhotographForm(this);
         }
 
         public Single Width

@@ -10,6 +10,11 @@ namespace Version_2_C
 
         public static readonly frmPainting Instance = new frmPainting();
 
+        public static void Run(clsPainting prPainting)
+        {
+            Instance.SetDetails(prPainting);
+        }
+
         protected override void updateForm()
         {
             base.updateForm();
