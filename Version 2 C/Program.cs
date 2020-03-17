@@ -15,7 +15,7 @@ namespace Version_2_C
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(frmMain.Instance);
         }
     }
 }
