@@ -13,25 +13,27 @@ namespace Version_2_C
         private clsWorksList _WorksList;
         private clsArtistList _ArtistList;
 
+        public clsArtistList ArtistList { get => _ArtistList; set => _ArtistList = value; }
+
         public clsArtist() { }
 
         public clsArtist(clsArtistList prArtistList)
         {
             _WorksList = new clsWorksList();
-            _ArtistList = prArtistList;
+            ArtistList = prArtistList;
         }
 
         public void NewArtist()
         {
             if (!string.IsNullOrEmpty(Name))
-                _ArtistList.Add(Name, this);
+                ArtistList.Add(Name, this);
             else
                 throw new Exception("No Artist name entered");
         }
 
         public bool IsDuplicate(string prArtistName)
         {
-            return _ArtistList.ContainsKey(prArtistName);
+            return ArtistList.ContainsKey(prArtistName);
         }
 
         public string Name
@@ -61,5 +63,6 @@ namespace Version_2_C
         {
             get { return _WorksList; }
         }
+
     }
 }

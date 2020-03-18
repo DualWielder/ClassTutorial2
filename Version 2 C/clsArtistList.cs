@@ -8,6 +8,9 @@ namespace Version_2_C
     public class clsArtistList : SortedList<string, clsArtist>
     {
         private const string _FileName = "gallery.dat";
+        private string _GalleryName;
+
+        public string GalleryName { get => _GalleryName; set => _GalleryName = value; }
 
         public decimal GetTotalValue()
         {

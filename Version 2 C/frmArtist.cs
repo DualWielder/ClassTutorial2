@@ -33,6 +33,14 @@ namespace Version_2_C
 
         }
 
+        private void updateTitle(string prArtistName)
+        {
+            if (!string.IsNullOrEmpty(prArtistName))
+            {
+                Text = "Artist Details - " + prArtistName;
+            }
+        }
+
         private void updateDisplay()
         {
             if (_WorksList.SortOrder == 0)
@@ -59,6 +67,8 @@ namespace Version_2_C
             updateForm();
             updateDisplay();
             Show();
+            frmMain.Instance.GalleryNameChanged += new frmMain.Notify(updateTitle);
+            updateTitle(_Artist.ArtistList.GalleryName);
         }
 
         private void updateForm()

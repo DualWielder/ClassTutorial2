@@ -5,6 +5,8 @@ namespace Version_2_C
 {
     public sealed partial class frmMain : Form
     {
+        public delegate void Notify(string prGalleryName);
+        public event Notify GalleryNameChanged;
         private frmMain()
         {
             InitializeComponent();
@@ -14,6 +16,12 @@ namespace Version_2_C
         public static frmMain Instance { get => _Instance; }
 
         private clsArtistList _ArtistList = new clsArtistList();
+
+        private void updateTitle(string prGalleryName)
+        {
+            if (!string.IsNullOrEmpty(prGalleryName))
+                Text = "Gallery - " + prGalleryName;
+        }
 
         public void updateDisplay()
         {
@@ -96,6 +104,15 @@ namespace Version_2_C
                 MessageBox.Show(ex.Message, "File retrieve error");
             }
             updateDisplay();
+            GalleryNameChanged += new Notify(updateTitle);
+            GalleryNameChanged(_ArtistList.GalleryName); //Event raising!
+        }
+
+        private void btnName_Click(object sender, EventArgs e)
+        {
+            _ArtistList.GalleryName = txtName.Text;
+            GalleryNameChanged(_ArtistList.GalleryName);
+
         }
     }
 }

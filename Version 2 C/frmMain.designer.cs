@@ -35,6 +35,8 @@ namespace Version_2_C
             this.btnAdd = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
             this.lstArtists = new System.Windows.Forms.ListBox();
+            this.btnName = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblValue
@@ -95,11 +97,29 @@ namespace Version_2_C
             this.lstArtists.TabIndex = 7;
             this.lstArtists.DoubleClick += new System.EventHandler(this.lstArtists_DoubleClick);
             // 
+            // btnName
+            // 
+            this.btnName.Location = new System.Drawing.Point(161, 142);
+            this.btnName.Name = "btnName";
+            this.btnName.Size = new System.Drawing.Size(80, 32);
+            this.btnName.TabIndex = 14;
+            this.btnName.Text = "Name";
+            this.btnName.Click += new System.EventHandler(this.btnName_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(159, 116);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(85, 20);
+            this.txtName.TabIndex = 15;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(256, 253);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.btnName);
             this.Controls.Add(this.lblValue);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.btnQuit);
@@ -111,6 +131,7 @@ namespace Version_2_C
             this.Text = "Gallery (v2 C)";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -123,6 +144,8 @@ namespace Version_2_C
         internal System.Windows.Forms.Button btnAdd;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.ListBox lstArtists;
+        internal System.Windows.Forms.Button btnName;
+        private System.Windows.Forms.TextBox txtName;
     }
 }
 
