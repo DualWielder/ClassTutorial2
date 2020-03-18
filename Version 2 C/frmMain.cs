@@ -5,13 +5,13 @@ namespace Version_2_C
 {
     public sealed partial class frmMain : Form
     {
-        public frmMain()
+        private frmMain()
         {
             InitializeComponent();
         }
 
         private static readonly frmMain _Instance = new frmMain();
-        public static frmMain Instance => _Instance;
+        public static frmMain Instance { get => _Instance; }
 
         private clsArtistList _ArtistList = new clsArtistList();
 

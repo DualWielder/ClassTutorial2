@@ -22,7 +22,8 @@ namespace Version_2_C
             if (!_ArtistFormList.TryGetValue(prArtist, out lcArtistForm))
             { 
                 lcArtistForm = new frmArtist();
-            _ArtistFormList.Add(prArtist, lcArtistForm);
+                _ArtistFormList.Add(prArtist, lcArtistForm);
+                lcArtistForm.SetDetails(prArtist);
         }
         else
         {
@@ -30,7 +31,7 @@ namespace Version_2_C
             lcArtistForm.Activate();
         }
 
-    }
+        }
 
         private void updateDisplay()
         {
