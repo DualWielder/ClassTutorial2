@@ -5,12 +5,10 @@ namespace Version_2_C
 {
     public sealed class clsDateComparer : IComparer<clsWork>
     {
-        private clsDateComparer()
-        {
-
-        }
 
         public static readonly clsDateComparer Instance = new clsDateComparer();
+        private clsDateComparer() { }
+
         public int Compare(clsWork x, clsWork y)
         {
             // long version:
